@@ -38,14 +38,31 @@ int sortMaxHeap(int *x, int size)
     }
 }
 
+void printHeap(int *x, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d", x[i]);
+        if (2 * i + 1 < size)
+        {
+            printf(" %d", x[2 * i + 1]);
+        }
+        if (2 * i + 2 < size)
+        {
+            printf(" %d", x[2 * i + 2]);
+        }
+        printf("\n");
+    }
+}
+
 int main()
 {
     int n;
     scanf("%d\n", &n);
     int minHeap[100000];
-    minHeap[0] = 0;
+    minHeap[0] = -1000000001;
     int maxHeap[100000];
-    maxHeap[0] = 0;
+    maxHeap[0] = 1000000001;
     int minIndex = 0;
     int maxIndex = 0;
     long long c = 0;
@@ -65,12 +82,16 @@ int main()
                 maxHeap[maxIndex] = a;
                 maxIndex++;
                 sortMaxHeap(maxHeap, maxIndex);
+                printf("max\n");
+                printHeap(maxHeap, maxIndex);
             }
             else
             {
                 minHeap[minIndex] = a;
                 minIndex++;
                 sortMinHeap(minHeap, minIndex);
+                printf("min\n");
+                printHeap(minHeap, minIndex);
             }
 
             c += b;

@@ -13,4 +13,5 @@ do
     time_ms=$(echo "scale=3; $time_ns / 1000000" | bc)
     echo "execution time: $time_ns ns"
     echo "execution time: $time_ms ms"
+    echo "---------------------------"
 done
