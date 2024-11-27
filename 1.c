@@ -3,7 +3,7 @@
 #include <time.h>
 #include <math.h>
 
-int findMedian(int* x, int size)
+int findMedian(int *x, int size)
 {
     while (1)
     {
@@ -33,8 +33,8 @@ int findMedian(int* x, int size)
         for (int i = 0; i <= equal; i++)
         {
             if (left + i == right + equal - i ||
-            left + i + 1 == right + equal - i ||
-            left + i == right + equal - i + 1)
+                left + i + 1 == right + equal - i ||
+                left + i == right + equal - i + 1)
             {
                 return place;
             }
@@ -63,7 +63,7 @@ int main()
             index++;
             c += b;
         }
-        else 
+        else
         {
             int median = x[findMedian(x, index)];
             long long sum = 0;
@@ -72,10 +72,10 @@ int main()
             {
                 sum += llabs(median - x[j]);
             }
-            
+
             printf("%d %lld\n", median, sum + c);
         }
     }
-    
+
     return 0;
 }
