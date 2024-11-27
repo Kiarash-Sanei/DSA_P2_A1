@@ -1,5 +1,5 @@
 # Calculating the minimum of function
-$$f(x)=\zigma|x-a_i|+c$$
+$$f(x)=\sum|x-a_i|+c$$
 
 ## Usage
 To test the program:
